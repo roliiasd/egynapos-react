@@ -10,5 +10,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/egynapos-react/',
+  base: "/egynapos-react/",
 })
