@@ -1,6 +1,6 @@
 import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, useLocation, Routes, Route } from "react-router-dom";
+import { HashRouter, useLocation, Routes, Route } from "react-router-dom";
 import { initGA, logPageView } from "../src/analytics";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -31,7 +31,7 @@ initGA();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/egynapos-react/">
+    <HashRouter>
       <GAListener>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -42,6 +42,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/faq" element={<Faq />} />
         </Routes>
       </GAListener>
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>
 );
