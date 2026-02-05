@@ -8,7 +8,6 @@ import '/src/styles/ContactUs.css'
 export default function ContactUs() {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
-    // Csak az oldal betöltésekor küldjük a konverziót
     logConversion();
   }, []);
   return (
