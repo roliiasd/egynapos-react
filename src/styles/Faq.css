@@ -1,0 +1,134 @@
+:root {
+  /* CSS HEX */
+  --platinum: #d7dedcff;
+  --timberwolf: #cfcfcdff;
+  --eggplant: #563440ff;
+  --dark-purple: #241623ff;
+  --sage: #d0cd94ff;
+  --myrtle-green: #3c787eff;
+  --rich-black: #001524;
+  --wenge: #564e58;
+  --onyx: #2e3532;
+  --sunset: #f6d8ae;
+  --imperial-red: #f71735;
+  --tiffany-blue: #98e2c6ff;
+  --cool-gray: #9a98b5ff;
+  --tropical-indigo: #a594f9ff;
+  --xanthous: #f7b32bff;
+}
+
+#faqHeader {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, var(--eggplant), var(--dark-purple));
+  color: var(--sunset);
+  border-bottom: 4px solid var(--xanthous);
+}
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: var(--rich-black);
+  min-height: 100vh;
+  color: var(--platinum);
+}
+
+.faq-list {
+  background-color: var(--onyx);
+  border-right: 2px solid var(--wenge);
+}
+
+.faq-row {
+  border-bottom: 1px solid var(--wenge);
+}
+
+.faq-list-item {
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  color: var(--timberwolf);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.faq-list-item:hover {
+  background-color: var(--dark-purple);
+  color: var(--sunset);
+}
+
+.faq-list-item.active {
+  background: linear-gradient(90deg, var(--eggplant), var(--dark-purple));
+  color: var(--xanthous);
+  font-weight: 600;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-list-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Mobil válasz (alatta) */
+.faq-mobile-answer {
+  background-color: var(--rich-black);
+  padding: 1rem 1.5rem;
+  color: var(--cool-gray);
+  line-height: 1.6;
+}
+
+/* Desktop válasz panel */
+.faq-content {
+  padding: 2rem;
+  background-color: var(--rich-black);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.homeBtn{
+  color: var(--platinum);
+  background: var(--myrtle-green);
+  font-weight: bold;
+  max-width: 150px;
+  transition: .5s ease-in-out;
+}
+.homeBtn:hover{
+  color: var(--platinum);
+  background: var(--myrtle-green);
+  transform: scale(1.1);
+}
+
+.faq-content h2 {
+  color: var(--sunset);
+  margin-bottom: 1rem;
+}
+
+.faq-content p {
+  color: var(--cool-gray);
+  line-height: 1.7;
+}
+
+/* Reszponzivitás */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .faq-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}

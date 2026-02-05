@@ -1,0 +1,78 @@
+:root {
+  /* CSS HEX */
+  --platinum: #d7dedcff;
+  --timberwolf: #cfcfcdff;
+  --eggplant: #563440ff;
+  --dark-purple: #241623ff;
+  --sage: #d0cd94ff;
+  --myrtle-green: #3c787eff;
+  --rich-black: #001524;
+  --wenge: #564e58;
+  --onyx: #2e3532;
+  --sunset: #f6d8ae;
+  --imperial-red: #f71735;
+  --tiffany-blue: #98e2c6ff;
+  --cool-gray: #9a98b5ff;
+  --tropical-indigo: #a594f9ff;
+  --xanthous: #f7b32bff;
+}
+
+.calcPage {
+  background: #5a5a5a;
+  font-weight: bold;
+  background: linear-gradient(
+    135deg,
+    #2f2f2f 25%,
+    #333333 25%,
+    #333333 50%,
+    #2f2f2f 50%,
+    #2f2f2f 75%,
+    #333333 75%,
+    #333333 100%
+  );
+  background-size: 40px 40px;
+  background-size: cover;
+  height: 100vh;
+  padding: 40px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: orange;
+  margin-bottom: 30px;
+}
+
+.priceCalcCard {
+  background: var(--eggplant);
+  border: 1px solid var(--imperial-red);
+  border-radius: 10px;
+  padding: 35px;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--xanthous);
+}
+
+.category,
+.workSelect,
+input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+  
+}
+
+.workTitle {
+  color: #b9a6ff;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.result {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #00ffcc;
+}

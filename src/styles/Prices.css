@@ -1,0 +1,129 @@
+:root {
+  /* CSS HEX */
+  --platinum: #d7dedcff;
+  --timberwolf: #cfcfcdff;
+  --eggplant: #563440ff;
+  --dark-purple: #241623ff;
+  --sage: #d0cd94ff;
+  --myrtle-green: #3c787eff;
+  --rich-black: #001524;
+  --wenge: #564e58;
+  --onyx: #2e3532;
+  --sunset: #f6d8ae;
+  --imperial-red: #f71735;
+  --tiffany-blue: #98e2c6ff;
+  --cool-gray: #9a98b5ff;
+  --tropical-indigo: #a594f9ff;
+  --xanthous: #f7b32bff;
+}
+.page{
+  margin: 0;
+  background-color: #111827;
+  color: white;
+  min-height: 100vh;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #1f2937;
+  color: white;
+}
+
+th,
+td {
+  padding: 8px 12px;
+  border: 1px solid #374151;
+}
+
+th {
+  background-color: #111827;
+  font-weight: bold;
+}
+
+.pricesCalculatorBtn{
+  color: var(--dark-purple);
+  padding: .75rem 15px;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+  animation: rainbowCalc 5s infinite;
+}
+.pricesCalculatorBtn:hover{
+  transform: scale(1.1);
+  color: var(--dark-purple);
+  background: var(--platinum);
+}
+
+button:disabled {
+  background-color: #6b7280;
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.pricesBtn {
+  background-color: var(--myrtle-green);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  padding: .75rem 2rem;
+  max-width: 15rem;
+}
+
+/* Desktop alapértelmezett */
+.desktop-table {
+  display: table;
+}
+
+.mobile-cards {
+  display: none;
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+  .desktop-table {
+    display: none !important;
+  }
+
+  .mobile-cards {
+    display: block !important;
+  }
+
+  .price-card {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .price-card h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .price-card p {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+}
+
+@keyframes rainbowCalc {
+  0%{
+    background: var(--sunset);
+    color: var(--dark-purple);
+  }
+  25%{
+    background: var(--myrtle-green);
+  }
+  50%{
+    background: var(--tropical-indigo);
+  }
+  75%{
+    background: var(--imperial-red);
+  }
+  100%{
+    background: var(--sage);
+  }
+}
