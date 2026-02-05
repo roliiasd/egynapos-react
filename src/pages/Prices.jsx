@@ -80,7 +80,6 @@ export default function Prices() {
             pricesPage={"/prices"}
             contactPage={"/contactus"}
             referencesPage={"/references"}
-            priceCalc={"priceCalc"}
             isOpen={isOpen ? "show" : ""}
             toggleMenu={() => setIsOpen(!isOpen)}
           />
@@ -93,7 +92,7 @@ export default function Prices() {
             <h1>
               {categories[currentIndex].name}
             </h1>
-            <Link to={"/Calc"} target="_blank">
+            <Link to={"/calc"} target="_blank">
               <Btn
                 content={"Ár kalkulátor"}
                 btnClass={"pricesCalculatorBtn"}
