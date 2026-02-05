@@ -9,7 +9,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import logoImg from "/src/logo.svg";
-import { Link } from "react-router-dom";
 
 export default function Navbar({
   isOpen,
@@ -34,28 +33,28 @@ export default function Navbar({
       <div className={`collapse navbar-collapse ${isOpen}`} id="navbarNav">
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <a href={homePage} className="nav-link">
+            <Link to={homePage} className="nav-link">
               <FontAwesomeIcon icon={faPaintRoller} />
               Főoldal
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href={pricesPage} className="nav-link">
+            <Link to={pricesPage} className="nav-link">
               <FontAwesomeIcon icon={faTags} />
               Árak
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href={referencesPage} className="nav-link ">
+            <Link to={referencesPage} className="nav-link ">
               <FontAwesomeIcon icon={faImage} />
               Referenciák
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href={contactPage} className="nav-link ">
+            <Link to={contactPage} className="nav-link ">
               <FontAwesomeIcon icon={faEnvelope} />
               Kapcsolat
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
