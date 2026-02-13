@@ -72,7 +72,7 @@ export default function Prices() {
 
   return (
     <>
-      <div className="page">
+      <div className="pricePage">
       <div className="navbar navbar-expand-lg">
         <div className="container">
           <Navbar

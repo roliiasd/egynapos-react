@@ -41,10 +41,10 @@ export default function PersonalInfos() {
       <div className="social-icons">
         <div className="social-icons">
           <a href="https://www.facebook.com/Egynaposfestes/" target="_blank">
-            <FontAwesomeIcon style={{fontSize:'3.5rem',marginRight: '50px'}} icon={faFacebook} />
+            <FontAwesomeIcon style={{ fontSize: '3.5rem', marginRight: '50px' }} icon={faFacebook} />
           </a>
           <a href="https://www.tiktok.com/@egynaposfestes.hu">
-            <FontAwesomeIcon style={{fontSize:'3.5rem'}} icon={faTiktok} />
+            <FontAwesomeIcon style={{ fontSize: '3.5rem' }} icon={faTiktok} />
           </a>
         </div>
       </div>
