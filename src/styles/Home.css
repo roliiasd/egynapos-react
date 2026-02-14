@@ -16,11 +16,15 @@
   --tropical-indigo: #a594f9ff;
   --xanthous: #f7b32bff;
 }
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  color: var(--timberwolf);
 }
 
 section {

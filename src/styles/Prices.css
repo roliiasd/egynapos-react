@@ -1,5 +1,4 @@
 :root {
-  /* CSS HEX */
   --platinum: #d7dedcff;
   --timberwolf: #cfcfcdff;
   --eggplant: #563440ff;
@@ -16,114 +15,237 @@
   --tropical-indigo: #a594f9ff;
   --xanthous: #f7b32bff;
 }
-.pricePage{
+
+/* ===== OLDAL WRAPPER ===== */
+
+.pricePage {
+  min-height: 100dvh;
+  background: radial-gradient(circle at top, #052338 0, #000 70%);
+  display: flex;
+  flex-direction: column;
+  color: var(--platinum);
+}
+
+@supports not (height: 100dvh) {
+  .pricePage {
+    min-height: 100vh;
+  }
+}
+
+/* ===== KÖZPONTI KÁRTYA ===== */
+
+.site {
+  max-width: 1200px;
+  margin: 4rem auto 2rem;
+  background: rgba(18, 24, 31, 0.96);          /* sötét, de nem teljesen fekete */
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+}
+
+.site .p-6 {
+  padding: 2.5rem 3rem;
+}
+
+/* ===== FEJLÉC: KATEGÓRIA NÉV + ÁR KALK GOMB ===== */
+
+.prices-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.prices-header h1 {
   margin: 0;
-  background-color: #111827;
-  color: white;
-  min-height: 100vh;
+  font-size: 2.1rem;
+  letter-spacing: -0.03em;
+  color: var(--tiffany-blue);                   /* türkiz cím */
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  background-color: #1f2937;
-  color: white;
+/* Ár kalkulátor gomb – türkiz + zöld átmenet */
+
+.prices-header .pricesCalculatorBtn {
+  background: linear-gradient(135deg, var(--tiffany-blue), var(--myrtle-green));
+  color: #001524;
+  border-radius: 999px;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-th,
-td {
-  padding: 8px 12px;
-  border: 1px solid #374151;
-}
+/* ===== KATEGÓRIA VÁLTÓ GOMBOK ===== */
 
-th {
-  background-color: #111827;
-  font-weight: bold;
-}
-
-.pricesCalculatorBtn{
-  color: var(--dark-purple);
-  padding: .75rem 15px;
-  font-weight: bold;
-  transition: 0.5s ease-in-out;
-  animation: rainbowCalc 5s infinite;
-}
-.pricesCalculatorBtn:hover{
-  transform: scale(1.1);
-  color: var(--dark-purple);
-  background: var(--platinum);
-}
-
-button:disabled {
-  background-color: #6b7280;
-  opacity: .5;
-  cursor: not-allowed;
+.prices-category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .pricesBtn {
-  background-color: var(--myrtle-green);
-  color: white;
-  border-radius: 8px;
-  border: none;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--platinum);
+  border-radius: 999px;
+  border: 1px solid rgba(152, 226, 198, 0.4);  /* halvány türkiz kontúr */
+  padding: 0.55rem 1.3rem;
+  font-size: 0.9rem;
   cursor: pointer;
-  padding: .75rem 2rem;
-  max-width: 15rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
 }
 
-/* Desktop alapértelmezett */
-.desktop-table {
-  display: table;
+.pricesBtn:hover:not(:disabled) {
+  background: rgba(152, 226, 198, 0.08);
+  border-color: rgba(152, 226, 198, 0.85);
+  box-shadow: 0 4px 16px rgba(152, 226, 198, 0.35);
+  transform: translateY(-1px);
 }
+
+.pricesBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ===== TÁBLÁZAT (DESKTOP) ===== */
+
+.desktop-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.desktop-table thead {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 60, 85, 0.98),
+    rgba(0, 90, 75, 0.98)
+  );                                             /* kékeszöld fejléc */
+}
+
+.desktop-table th {
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  color: #e4f7f2;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  user-select: none;
+}
+
+.desktop-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.desktop-table tbody tr:nth-child(even) {
+  background: rgba(7, 18, 27, 0.9);
+}
+
+.desktop-table tbody tr:nth-child(odd) {
+  background: rgba(5, 13, 21, 0.9);
+}
+
+.desktop-table tbody tr:hover {
+  background: rgba(152, 226, 198, 0.14);        /* türkiz highlight */
+}
+
+.desktop-table td {
+  padding: 0.7rem 0.9rem;
+  color: var(--timberwolf);
+  vertical-align: top;
+}
+
+.desktop-table tt {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.86rem;
+  color: #b8c3c0;
+}
+
+/* ===== MOBIL KÁRTYÁK ===== */
 
 .mobile-cards {
   display: none;
+  margin-top: 1.5rem;
 }
 
-/* Mobil nézet */
-@media (max-width: 768px) {
+.price-card {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(152, 226, 198, 0.16);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.price-card h3 {
+  margin: 0;
+  color: var(--tiffany-blue);
+  font-size: 1rem;
+}
+
+.price-card tt {
+  font-size: 0.82rem;
+  color: var(--cool-gray);
+}
+
+.price-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--platinum);
+}
+
+/* ===== PAGINATION GOMBOK ALUL ===== */
+
+.prices-pagination {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 992px) {
+  .site {
+    margin: 2rem 1rem;
+    border-radius: 16px;
+  }
+
+  .site .p-6 {
+    padding: 1.5rem;
+  }
+
+  .prices-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prices-header h1 {
+    font-size: 1.7rem;
+  }
+
   .desktop-table {
-    display: none !important;
+    display: none;
   }
 
   .mobile-cards {
-    display: block !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .price-card {
-    background-color: #1f2937;
-    border: 1px solid #374151;
-    border-radius: 10px;
-    padding: 12px;
-    margin-bottom: 12px;
-  }
-
-  .price-card h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 6px;
-  }
-
-  .price-card p {
-    font-size: 14px;
-    margin-bottom: 4px;
-  }
-}
-
-@keyframes rainbowCalc {
-  0%{
-    background: var(--sunset);
-    color: var(--dark-purple);
-  }
-  25%{
-    background: var(--myrtle-green);
-  }
-  50%{
-    background: var(--tropical-indigo);
-  }
-  75%{
-    background: var(--imperial-red);
-  }
-  100%{
-    background: var(--sage);
+  .prices-category-nav {
+    flex-wrap: wrap;
   }
 }

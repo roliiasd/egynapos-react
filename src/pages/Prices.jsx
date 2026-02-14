@@ -88,7 +88,7 @@ export default function Prices() {
 
       <div className="site">
         <div className="p-6">
-          <div  className="my-3 text-lg text-center">
+          <div  className="prices-header my-3 text-lg text-center">
             <h1>
               {categories[currentIndex].name}
             </h1>
@@ -100,7 +100,7 @@ export default function Prices() {
               />
             </Link>
           </div>
-          <div className="d-flex gap-4 mb-4 text-center">
+          <div className="prices-category-nav d-flex gap-4 mb-4 text-center">
             <button
               className="pricesBtn"
               onClick={() => setCurrendIndex((prev) => Math.max(prev - 1, 0))}
@@ -159,6 +159,7 @@ export default function Prices() {
               ))}
             </tbody>
           </table>
+
           <div className="mobile-cards">
             {table.getRowModel().rows.map((row) => {
               const item = row.original;
@@ -176,7 +177,7 @@ export default function Prices() {
               );
             })}
           </div>
-          <div className="d-flex gap-2 mt-4">
+          <div className="prices-pagination d-flex gap-2 mt-4">
             <button
               className="pricesBtn"
               onClick={() => table.previousPage()}
