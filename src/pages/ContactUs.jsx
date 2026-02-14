@@ -19,26 +19,27 @@ export default function ContactUs() {
             pricesPage={"/prices"}
             contactPage={"/contactus"}
             referencesPage={"/references"}
-            isOpen={isOpen ? "show" : ""}
+            isOpen={isOpen}
             toggleMenu={() => setIsOpen(!isOpen)}
           />
         </div>
       </div>
       <section className="py-5 contactSection">
         <div className="container">
-          <h1 className="text-center text-white mb-4">Kapcsolat</h1>
+          <h1 className="contact-title text-center mb-4">Kapcsolat</h1>
 
-          <InfoCardPiece
-            mRoland={'Mészáros Roland'}
-            mRolandnumber={'+3630-958-3660'}
-            kBalazs={'Kovács Balázs'}
-            kBalazsnumber={'+3630-403-4134'}
-            irs={'Adószám: '}
-            irsNumber={'71675378-1-29'}
-            emaiL={'E-mail: '}
-            email={'egynaposfestes@gmail.com'}
-          />
-
+          <div className="column contact-column">
+            <InfoCardPiece
+              mRoland="Mészáros Roland"
+              mRolandnumber="+3630-958-3660"
+              kBalazs="Kovács Balázs"
+              kBalazsnumber="+3630-403-4134"
+              irs="Adószám:"
+              irsNumber="71675378-1-29"
+              emaiL="E-mail:"
+              email="egynaposfestes@gmail.com"
+            />
+          </div>
         </div>
       </section>
       <ContactUsFooter />

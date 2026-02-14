@@ -25,45 +25,18 @@ body {
 body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
+  font-weight: 400;
 }
-
+.homePage{
+  min-height: 100dvh;
+}
 section {
   background: #5a5a5a;
   font-weight: bold;
   padding: 3rem 0;
   text-align: center;
-}
 
-/* Navbar start */
-
-.navbar {
-  background: linear-gradient(10deg, #1e1e2f, #3f3f64);
-  backdrop-filter: blur(8px);
-  color: var(--platinum);
 }
-.navbar-brand img {
-  width: 150px;
-}
-.nav-link {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  color: wheat;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.3s ease-in-out;
-}
-.navbar-toggler {
-  color: wheat;
-  border: none;
-}
-.nav-link:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
-/* Navbar end */
-
 .jobButtons {
   background: linear-gradient(
     135deg,
@@ -75,8 +48,8 @@ section {
     #333333 75%,
     #333333 100%
   );
-  background-size: 40px 40px;
-  background-size: cover;
+  background-size: 1200px 1200px; /* ezt hagyd meg */
+  /* background-size: cover;   <-- EZT VEDD KI */
 }
 
 .calculatorBtn {
@@ -95,7 +68,6 @@ section {
   color: white;
   transform: scale(1.05);
 }
-
 
 .privacy-button {
   background-color: #333333;
@@ -116,6 +88,15 @@ section {
 .card {
   max-width: 450px;
   margin: auto auto;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card.leftSide {
@@ -135,10 +116,7 @@ section {
 .card-title {
   font-size: 1.2rem;
   color: #fff;
-  font-weight: bold;
-}
-.card:hover {
-  transform: scale(1.1);
+  font-weight: 600;
 }
 
 /* card */
@@ -172,7 +150,12 @@ div.infoContainer a {
 footer {
   background-color: #333333;
   color: white;
-  padding: 20px 0;
+  padding: 30px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 footer a {
@@ -185,33 +168,60 @@ footer a:hover {
   color: #d3d3d3;
 }
 /*  */
-.pulse {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  display: flex;
-  text-decoration: none;
-  user-select: none;
+.content {
   text-align: center;
+}
+
+/* maga a link – NEM animáljuk a méretét */
+.pulse {
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0.6rem 1.6rem;
+  margin-bottom: 1.5rem;
+  border-radius: 999px;
+  font-size: 2.3rem;
+  font-weight: 700;
   color: var(--xanthous);
+  text-decoration: none;
+  z-index: 1;
 }
-@keyframes rainbow {
-  0%{
-    background: var(--sunset);
-    color: var(--dark-purple);
+
+/* fix „pill” háttér, ez se animál */
+.pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* PULSE: csak a háttér fényudvara animál,
+   nem változik a link mérete / pozíciója */
+.pulse::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(247, 179, 43, 0.6), transparent 60%);
+  opacity: 0;
+  transform: scale(0.8);
+  z-index: -2;
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.8);
   }
-  25%{
-    background: var(--myrtle-green);
+  70% {
+    opacity: 0;
+    transform: scale(1.4);
   }
-  50%{
-    background: var(--tropical-indigo);
-  }
-  75%{
-    background: var(--imperial-red);
-  }
-  100%{
-    background: var(--sage);
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
   }
 }

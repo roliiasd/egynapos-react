@@ -83,14 +83,15 @@ export default function References() {
 
   return (
     <>
-      <nav className={"navbar navbar-expand-lg"}>
+      <div className="referencesPage">
+        <nav className={"navbar navbar-expand-lg"}>
         <div className="container">
           <Navbar
             homePage={"/"}
             pricesPage={"/prices"}
             contactPage={"/contactus"}
             referencesPage={"/references"}
-            isOpen={isOpen ? "show" : ""}
+            isOpen={isOpen}
             toggleMenu={() => setIsOpen(!isOpen)}
           />
         </div>
@@ -129,6 +130,7 @@ export default function References() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </>
   );

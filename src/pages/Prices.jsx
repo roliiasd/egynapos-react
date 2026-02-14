@@ -80,7 +80,7 @@ export default function Prices() {
             pricesPage={"/prices"}
             contactPage={"/contactus"}
             referencesPage={"/references"}
-            isOpen={isOpen ? "show" : ""}
+            isOpen={isOpen}
             toggleMenu={() => setIsOpen(!isOpen)}
           />
         </div>

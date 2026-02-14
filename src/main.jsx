@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "/src/styles/Prices.css";
 import "/src/styles/Home.css";
 import "/src/styles/PriceCalc.css";
+import '/src/styles/Navbar.css'
 
 import Home from "./pages/Home.jsx";
 import Prices from "./pages/Prices.jsx";
@@ -14,6 +15,7 @@ import Calc from "./pages/Calc.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import References from "./pages/References.jsx";
 import Faq from './pages/Faq.jsx';
+import DonateForMyHumbleSelf from "./pages/DonateForMyHumbleSelf.jsx";
 
 // --- GA-tracking wrapper komponens ---
 function GAListener({ children }) {
@@ -40,6 +42,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/calc" element={<Calc />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path="/donateforthisproudaiuserdeveloper" element={<DonateForMyHumbleSelf />} />
         </Routes>
       </GAListener>
     </HashRouter>

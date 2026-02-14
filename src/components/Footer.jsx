@@ -53,7 +53,7 @@ export default function Footer() {
         </p>
         <p style={{ fontSize: ".85rem" }}>
           Weboldalt tervezte:
-          <Link to={"/"}>
+          <Link to={"/donateforthisproudaiuserdeveloper"}>
             <span> Kovács Roland</span>
           </Link>
         </p>

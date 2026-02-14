@@ -1,5 +1,4 @@
 :root {
-  /* CSS HEX */
   --platinum: #d7dedcff;
   --timberwolf: #cfcfcdff;
   --eggplant: #563440ff;
@@ -17,34 +16,123 @@
   --xanthous: #f7b32bff;
 }
 
+/* ===== KAPCSOLAT SZEKCIÓ – HÁTTÉR + CÍM ===== */
+
 .contactSection {
-  background: linear-gradient(
-    135deg,
-    #2f2f2f 25%,
-    #333333 25%,
-    #333333 50%,
-    #2f2f2f 50%,
-    #2f2f2f 75%,
-    #333333 75%,
-    #333333 100%
-  );
-  background-size: 1500px 1500px;
+  background: radial-gradient(circle at top, #33363d 0, #15161b 60%);
   min-height: 80vh;
+  padding-bottom: 3rem;
+  
 }
 
+.contactSection .container {
+  max-width: 900px;
+  
+}
+
+/* „Kapcsolat” cím – Ár kalkulátorhoz hasonló gradient */
+.contactSection h1 {
+  background: linear-gradient(135deg, #d7dedc, #a594f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+/* ===== INFO KÁRTYÁK – ELRENDEZÉS VÁLTOZATLAN ===== */
+
+.infoCard {
+  border: none;
+  background: transparent; /* ne legyen külön bg-dark szín */
+}
+
+/* a nagy „gerenda” kártya */
 .infoCard-body {
-  background: linear-gradient(135deg, #5f5f5f 50%, #464646 50%);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgb(255, 255, 255, 0.4);
+  background: linear-gradient(145deg, #2a2d33, #202228);
+  color: #ffffff;
+  padding: 1.2rem 1.7rem;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+  text-align: center;
 }
 
-a {
-  color: #459a55;
+/* kártyán belüli linkek (tel, email, adószám) */
+.infoCard-body a {
+  color: #59b86b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.infoCard-body a:hover {
+  text-decoration: underline;
+}
+
+/* az utolsó (cím) kártyán kisebb, halványabb szöveg */
+.infoCard:last-of-type .infoCard-body span {
+  font-size: 0.9rem;
+  color: var(--timberwolf);
+}
+
+/* ===== FOOTER – SZÍNEK IGAZÍTVA A TÉMÁHOZ ===== */
+
+.contact-footer {
+  background: #14151a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.8rem 0 2.2rem;
+  color: var(--platinum);
+  font-size: 0.9rem;
+}
+
+.contact-footer .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.contact-footer .social-icons a {
+  color: #d0cd94;          /* sage */
+  font-size: 1.6rem;
+}
+
+.contact-footer .social-icons a:hover {
+  color: var(--xanthous);  /* sárgás kiemelés */
+}
+
+/* GYIK link is itt van, ne legyen aláhúzva alapból */
+.contact-footer .social-icons a,
+.contact-footer .social-icons a:visited {
   text-decoration: none;
 }
 
-a:hover {
-  color: #459a55;
+/* alsó linkek (tervező, freepik) */
+.contact-footer a {
+  color: var(--tiffany-blue);
+  text-decoration: none;
+}
+
+.contact-footer a:hover {
+  text-decoration: underline;
+}
+
+.contact-footer p {
+  margin: 0.2rem 0;
+}
+
+.contact-footer p:last-child {
+  font-size: 0.75rem;
+  color: var(--cool-gray);
+}
+
+/* mobil finomhangolás */
+@media (max-width: 768px) {
+  .contactSection .container {
+    padding-inline: 1rem;
+  }
+
+  .contactSection h1 {
+    font-size: 2rem;
+  }
 }

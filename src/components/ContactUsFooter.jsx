@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "react-router-dom";
 export default function ContactUsFooter() {
     return (
-        <footer>
+        <footer className="contact-footer">
             <div className="container text-center">
                 <div className="social-icons">
                     <a href="https://www.facebook.com/Egynaposfestes/">
@@ -16,10 +16,14 @@ export default function ContactUsFooter() {
                         GYIK
                     </Link>
                 </div>
-                <p style={{ marginTop: '10px' }}>&copy; 2024 EgyNaposFestés. Minden jog fenntartva.</p>
-                <p style={{ fontSize: ' .85rem' }}>Weboldalt tervezte: <a href="/ineedmoneyguys/index.html"><span>Kovács
-                    Roland</span></a></p>
-                <p style={{ fontSize: '8pt' }}>Logos: <a href="https://www.freepik.com" style={{ fontSize: '8pt' }}>Designed
+                <p >&copy; 2024 EgyNaposFestés. Minden jog fenntartva.</p>
+                <p style={{ fontSize: ".85rem" }}>
+                    Weboldalt tervezte:
+                    <Link to={"/donateforthisproudaiuserdeveloper"}>
+                        <span> Kovács Roland</span>
+                    </Link>
+                </p>
+                <p >Logos: <a href="https://www.freepik.com" style={{ fontSize: '8pt' }}>Designed
                     by
                     BiZkettE1 / Freepik</a></p>
             </div>

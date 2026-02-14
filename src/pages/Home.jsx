@@ -26,7 +26,7 @@ import {
 
 import { faTruckMonster } from "@fortawesome/free-solid-svg-icons/faTruckMonster";
 
-function Home() {
+export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -37,17 +37,16 @@ function Home() {
             pricesPage={"/prices"}
             contactPage={"/contactus"}
             referencesPage={"/references"}
-            isOpen={isOpen ? "show" : ""}
+            isOpen={isOpen}
             toggleMenu={() => setIsOpen(!isOpen)}
           />
         </div>
       </nav>
       <section className="py-5 jobButtons">
+
         <div className="content">
-          <Link to={"/prices"} style={{ textDecoration: "none" }}>
-            <p className="pulse" style={{ backgroundSize: "cover" }}>
-              Árak
-            </p>
+          <Link to={"/prices"} className="pulse" style={{ textDecoration: "none" }}>
+            Árak
           </Link>
         </div>
         <div className="container">
@@ -160,7 +159,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       {/* herooverlay */}
       <section className="py-5 hero grid-bg">
         <HeroOverlay />
@@ -176,4 +174,4 @@ function Home() {
   );
 }
 
-export default Home;
+

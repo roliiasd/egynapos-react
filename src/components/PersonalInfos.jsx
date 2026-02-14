@@ -22,7 +22,7 @@ export default function PersonalInfos() {
         </span>
         Tel:{" "}
         <a href="tel:+3630-403-4134">
-          <tt>+3630-403-4134</tt>
+          <tt >+3630-403-4134</tt>
         </a>
         <br />
         <span style={{ color: "white", fontWeight: "bold" }}>
@@ -30,21 +30,21 @@ export default function PersonalInfos() {
         </span>
         Tel:{" "}
         <a href="+3630-958-3660">
-          <tt>+3630-958-3660</tt>
+          <tt >+3630-958-3660</tt>
         </a>
         <br />
         E-mail:{" "}
         <a href="mailto:egynaposfestes@gmail.com">
-          <tt>egynaposfestes@gmail.com</tt>
+          <tt >egynaposfestes@gmail.com</tt>
         </a>
       </p>
       <div className="social-icons">
         <div className="social-icons">
           <a href="https://www.facebook.com/Egynaposfestes/" target="_blank">
-            <FontAwesomeIcon style={{ fontSize: '3.5rem', marginRight: '50px' }} icon={faFacebook} />
+            <FontAwesomeIcon style={{ fontSize: '3.5rem', marginRight: '50px'}} icon={faFacebook} />
           </a>
           <a href="https://www.tiktok.com/@egynaposfestes.hu">
-            <FontAwesomeIcon style={{ fontSize: '3.5rem' }} icon={faTiktok} />
+            <FontAwesomeIcon style={{ fontSize: '3.5rem'}}  icon={faTiktok} />
           </a>
         </div>
       </div>

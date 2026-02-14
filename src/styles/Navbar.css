@@ -1,0 +1,162 @@
+/* NAVBAR SÁV – marad lila, csak egy kicsit finomítva */
+.navbar {
+  background: linear-gradient(90deg, #2b1a4a, #4c2f8d);
+  backdrop-filter: blur(8px);
+  color: #fdfbff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* logó */
+.navbar-brand img {
+  height: 42px;
+}
+
+.navbar-toggler {
+  background: transparent;
+  border: 2px solid #f6d8ae;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.navbar-toggler:hover {
+  box-shadow: 0 0 8px rgba(246, 216, 174, 0.6);
+}
+
+.hamburger {
+  position: relative;
+  width: 20px;
+  height: 16px;
+}
+
+.hamburger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: #f6d8ae;
+  transition:
+    transform 0.25s ease,
+    top 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 7px;
+}
+.hamburger span:nth-child(3) {
+  top: 14px;
+}
+
+.navbar-toggler.is-open .hamburger span:nth-child(1) {
+  top: 7px;
+  transform: rotate(45deg);
+}
+.navbar-toggler.is-open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggler.is-open .hamburger span:nth-child(3) {
+  top: 7px;
+  transform: rotate(-45deg);
+}
+
+/* nav lista */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ==== LINK ALAP STÍLUS (csak a navban!) ==== */
+.navbar .nav-link,
+.navbar .nav-link:visited {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.9rem;
+  border-radius: 0.35rem;
+  color: #f6d8ae; /* narancsos szöveg */
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+/* ikon vegye át a színt */
+.navbar .nav-link svg {
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+/* HOVER – enyhe háttér, semmi nagy buborék */
+.navbar .nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* AKTÍV OLDAL – kicsit erősebb háttér, fehér szín */
+.navbar .nav-link.active,
+.navbar .nav-link.active:visited {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+}
+/* ===== DESKTOP ===== */
+
+/* desktopon a menü jobb oldalon, egy sorban */
+@media (min-width: 992px) {
+  .navbar-menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ===== MOBIL – LEFELÉ NYÍLÓ ANIMÁLT MENÜ ===== */
+@media (max-width: 992px) {
+  /* engedjük, hogy a navbar több sorba törjön */
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar-menu {
+    width: 100%;
+    flex-basis: 100%; /* teljes szélességű, új sorba kerül */
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      max-height 0.25s ease,
+      opacity 0.2s ease,
+      transform 0.25s ease;
+  }
+
+  .navbar-menu.is-open {
+    max-height: 300px; /* elég nagy, hogy az összes link beleférjen */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.3rem 0 0.6rem;
+  }
+
+  .navbar .nav-link {
+    width: 100%;
+  }
+}

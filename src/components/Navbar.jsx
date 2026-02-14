@@ -1,7 +1,6 @@
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import {
-  faBars,
   faEnvelope,
   faPaintRoller,
   faTags,
@@ -20,41 +19,69 @@ export default function Navbar({
 }) {
   return (
     <>
-      <Link to={homePage} className="navbar-brand">
+      <NavLink to={homePage} className="navbar-brand">
         <img src={logoImg} alt="Egynaposfestes logo" />
-      </Link>
-      {/* hamburger menu button */}
-      <button className="navbar-toggler" type="button" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={faBars} />
+      </NavLink>
+
+      <button
+        className={`navbar-toggler ${isOpen ? "is-open" : ""}`}
+        type="button"
+        onClick={toggleMenu}
+        aria-label="Menü"
+        aria-expanded={isOpen}
+      >
+        <span className="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </button>
 
-      {/* navbar */}
-
-      <div className={`collapse navbar-collapse ${isOpen}`} id="navbarNav">
-        <ul className="navbar-nav ms-auto">
+      <div className={`navbar-menu ${isOpen ? "is-open" : ""}`} id="navbarNav">
+        <ul className="navbar-nav mx-auto">
           <li className="nav-item">
-            <Link to={homePage} className="nav-link">
+            <NavLink
+              to={homePage}
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
               <FontAwesomeIcon icon={faPaintRoller} />
-              Főoldal
-            </Link>
+              <span>Főoldal</span>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={pricesPage} className="nav-link">
+            <NavLink
+              to={pricesPage}
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
               <FontAwesomeIcon icon={faTags} />
-              Árak
-            </Link>
+              <span>Árak</span>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={referencesPage} className="nav-link ">
+            <NavLink
+              to={referencesPage}
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
               <FontAwesomeIcon icon={faImage} />
-              Referenciák
-            </Link>
+              <span>Referenciák</span>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={contactPage} className="nav-link ">
+            <NavLink
+              to={contactPage}
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
               <FontAwesomeIcon icon={faEnvelope} />
-              Kapcsolat
-            </Link>
+              <span>Kapcsolat</span>
+            </NavLink>
           </li>
         </ul>
       </div>
